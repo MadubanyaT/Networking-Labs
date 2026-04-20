@@ -1,0 +1,2 @@
+# STP Loop Prevention Practical
+In this practical lab I will be explaining what STP is, loops created in Ethernet Layer 2 switches, and how STP prevents those loops from occurring. There is a packet-tracer file attached that I will be using to demonstrate everything, there is also a docx file with questions and answers for this practical.
