@@ -19,10 +19,12 @@ In a network design (Hierarchical) we often create redundant paths, this impleme
 ## What is STP?
 STP is a network protocol that uses Spanning-Tree Algorithm (STA) to create a loop-free topology. This protocol is used in switches to ensure that they avoid Layer 2 loops caused by redundant paths within a hierarchial network.  
 
-Switches have STP configured within them by default. Meaning when they are connected within redundant paths network, STA mechanism will be implemented to elect the root bridge, root ports, designated ports, and blocked(alternate) ports.
-
 
 ## How does STP prevents those loops from occurring?
+Switches have STP configured within them by default. Meaning when they are connected within redundant paths network, STA mechanism will be implemented to elect the root bridge, root ports, designated ports, and blocked(alternate) ports.
 
+STP elects a root bridge based on the lowest Bridge ID(ID) of the switches, after the Root ports and Designated ports will elected.
+- **Root port**: This is the port on non-root bridge switch with the lowest cost path to the root bridge.
+- **Designated port**: 
 
 
