@@ -24,7 +24,18 @@ STP is a network protocol that uses Spanning-Tree Algorithm (STA) to create a lo
 Switches have STP configured within them by default. Meaning when they are connected within redundant paths network, STA mechanism will be implemented to elect the root bridge, root ports, designated ports, and blocked(alternate) ports.
 
 STP elects a root bridge based on the lowest Bridge ID(ID) of the switches, after the Root ports and Designated ports will elected.
-- **Root port**: This is the port on non-root bridge switch with the lowest cost path to the root bridge.
-- **Designated port**: 
+- **Root Port**: This is the port on non-root bridge switch with the lowest cost path to the root bridge (forwards traffic to the root bridge).
+- **Designated Port**: This port forward traffic onto the next network segment (Forwards traffic away from the root bridge switch). 
+- **Blocked Port**: This port only receives traffic but cannot forward any.
+
+*The figure below shows orange links between switches meaning they are trying to elect the root bridge for the connection.*![STP Loading](./images/STP_Loading.png)
+
+*This figure below shows the results after the root bridge has been elected.*![STP Implemented](./images/STP_Implemented.png)
+
+### Results
+ - **S2**: is the root bridge and all its ports are designated ports.
+ - **S1**: G0/2 port is the root port and G0/1 port is the designated port.
+ - **S3**: G0/1 port is the root port and G0/2 port is the blocked port. It can change its status if there is any change in the connection of devices e.g, The ethernet connection between S1 and S2 is removed. The frames of S1 will now use the route of S1 (G0/1) and S3(G0/2).
+
 
 
